@@ -37,10 +37,6 @@ app.get('/recipes', (req, res) => {
   });
 });
 
-app.get('/featured', (req, res) => {
-  res.render('features', { author: 'Tan' });
-});
-
 app.get('/demo', (req, res) => {
   let recipeController = require('./controllers/recipeController');
   recipeController.getOne(1).then((data) => {
@@ -53,7 +49,7 @@ app.get('/feature/:recipeId', async (req, res) => {
   let recipeController = require('./controllers/recipeController');
   recipeController.getOne(req.params.recipeId).then((data) => {
     console.log(data);
-    res.send(data);
+    res.render("features", { data: data, author: "18127269 - Nguyễn Thái Tân" });
   });
 });
 
