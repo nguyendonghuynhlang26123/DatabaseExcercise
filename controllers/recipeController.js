@@ -7,7 +7,10 @@ controller.getAll = () => {
 };
 
 controller.getOne = (id) => {
-  return models.Recipe.findOne({ where: { id: id } });
+  return models.Recipe.findOne({
+    where: { id: id },
+    include: [{ model: models.Direction }, { model: models.Ingredient }],
+  });
 };
 
 module.exports = controller;
