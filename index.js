@@ -29,9 +29,9 @@ app.get('/createTables', (req, res) => {
   });
 });
 
-app.get('/t', (req, res) => {
-  let blogController = require('./controllers/blogController');
-  blogController.getAll().then((data) => {
+app.get('/demo', (req, res) => {
+  let recipeController = require('./controllers/recipeController');
+  recipeController.getOne(1).then((data) => {
     console.log(data);
     res.send(data);
   });
