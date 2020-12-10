@@ -1,8 +1,8 @@
 <div id="content">
   <div>
     <ul>
-      {{#each people}}
-      {{> foodcard title}}
+      {{#each list}}
+      {{> foodcard img=smallImagePath title=title description=summary _id=id}}
       {{/each}}
     </ul>
   </div>

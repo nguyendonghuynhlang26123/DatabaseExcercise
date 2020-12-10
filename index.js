@@ -32,8 +32,12 @@ app.get('/createTables', (req, res) => {
 app.get('/recipes', (req, res) => {
   let recipeController = require('./controllers/recipeController');
   recipeController.getAll().then((data) => {
-    //res.render('recipes', { author: 'Long' });
-    res.send(data);
+    console.log(data);
+    res.render('recipes', {
+      author: 'Nguyen Dang Huynh Long - 18127136',
+      list: data,
+      n: 2,
+    });
   });
 });
 

@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <title>{{author}}</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
@@ -19,5 +19,9 @@
   </div>
   {{>footer}}
 </body>
+
+<script>
+  document.getElementById('navHeader').children.item({{ n }}).classList.add("current");
+</script>
 
 </html>
