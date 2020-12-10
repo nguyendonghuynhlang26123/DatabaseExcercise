@@ -1,9 +1,11 @@
 const controller = {};
 
-const models = require("../models");
+const models = require('../models');
 
 controller.getAll = () => {
-  return models.Recipe.findAll();
+  return models.Recipe.findAll({
+    include: [{ model: models.Ingredient, limit: 4 }],
+  });
 };
 
 controller.getOne = (id) => {
