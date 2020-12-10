@@ -37,6 +37,14 @@ app.get('/demo', (req, res) => {
   });
 });
 
+app.get('/demot', (req, res) => {
+  let directionController = require('./controllers/directionController');
+  directionController.getAll().then((data) => {
+    console.log(data);
+    res.send(data);
+  });
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
