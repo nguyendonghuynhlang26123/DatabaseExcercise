@@ -37,9 +37,9 @@ app.get('/demo', (req, res) => {
   });
 });
 
-app.get('/demot', (req, res) => {
-  let directionController = require('./controllers/directionController');
-  directionController.getAll().then((data) => {
+app.get('/feature/:recipeId', async (req, res) => {
+  let recipeController = require('./controllers/recipeController');
+  recipeController.getOne(req.params.recipeId).then((data) => {
     console.log(data);
     res.send(data);
   });
