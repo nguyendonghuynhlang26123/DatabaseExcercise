@@ -29,6 +29,13 @@ app.get('/createTables', (req, res) => {
   });
 });
 
+app.get('/recipes', (req, res) => {
+  let recipeController = require('./controllers/recipeController');
+  recipeController.getAll().then((data) => {
+    res.render('recipes', {});
+  });
+});
+
 app.get('/demo', (req, res) => {
   let recipeController = require('./controllers/recipeController');
   recipeController.getOne(1).then((data) => {

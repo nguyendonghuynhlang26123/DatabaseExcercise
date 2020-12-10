@@ -4,20 +4,20 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>MSSV</title>
+  <title>{{author}}</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
-  {{> header }}
-  {{{body}}}
-  <div class="footer">
+  {{>navbar}}
+  <div class="body">
     <div>
-      <p style="color: black;">
-        &copy; Copyright 2020 by {{author}}
-      </p>
+      {{>header}}
+      {{{body}}}
     </div>
+    {{>sidebar}}
   </div>
+  {{>footer}}
 </body>
 
 </html>
