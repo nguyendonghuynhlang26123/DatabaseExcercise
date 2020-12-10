@@ -32,8 +32,13 @@ app.get('/createTables', (req, res) => {
 app.get('/recipes', (req, res) => {
   let recipeController = require('./controllers/recipeController');
   recipeController.getAll().then((data) => {
-    res.render('recipes', {});
+    //res.render('recipes', { author: 'Long' });
+    res.send(data);
   });
+});
+
+app.get('/featured', (req, res) => {
+  res.render('features', { author: 'Tan' });
 });
 
 app.get('/demo', (req, res) => {
