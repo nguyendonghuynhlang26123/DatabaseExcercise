@@ -2,8 +2,8 @@ const controller = {};
 
 const models = require("../models");
 
-controller.getAll = () => {
-  return models.Ingredient.findAll();
+controller.getAll = (recipeId) => {
+  return models.Ingredient.findAll({ where: { RecipeId: recipeId } });
 };
 
 controller.getOne = (id) => {
